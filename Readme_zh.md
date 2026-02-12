@@ -39,21 +39,21 @@ RePlanKG 通过引入 **report-guided 规划–执行–反思闭环机制**，�
 ### 1️⃣ RePlanKG 总体框架
 
 <!-- 请替换为实际图片路径 -->
-![RePlanKG Framework](./assets/framework.png)
+![RePlanKG Framework](./figs/rpg_framework.png)
 
 ---
 
 ### 2️⃣ 与已有范式对比
 
 <!-- 请替换为实际图片路径 -->
-![Paradigm Comparison](./assets/comparison.png)
+![Paradigm Comparison](./figs/vs_pre_work.png)
 
 ---
 
 ### 3️⃣ 案例分析示例
 
 <!-- 请替换为实际图片路径 -->
-![Case Study](./assets/case.png)
+![Case Study](./figs/case.png)
 
 ---
 
