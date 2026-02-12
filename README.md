@@ -1,5 +1,7 @@
 # RePlanKG: Report-Guided Symbolic Planning for Knowledge Graph Question Answering
 
+[中文版](./README_zh.md)
+
 RePlanKG is a report-guided plan–execute–reflect framework for Knowledge Graph Question Answering (KGQA). It enables large language models (LLMs) to generate executable symbolic retrieval plans, execute them over knowledge graphs, and iteratively refine reasoning using structured execution feedback.
 
 This repository provides the official inference implementation of RePlanKG.
