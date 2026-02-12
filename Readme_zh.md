@@ -1,6 +1,6 @@
 # RePlanKG：基于报告引导的符号规划知识图谱问答框架
 
-[English Version](./README_RePlanKG.md)
+[English Version](./README.md)
 
 ---
 
