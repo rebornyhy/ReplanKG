@@ -114,7 +114,7 @@ https://pan.baidu.com/s/11mutP53dVkK-rWG8Olfgxg
 将下载的 `mid2name` 文件夹替换项目中的：
 
 ```
-./midname/
+./mid2name/
 ```
 
 确保存在：
