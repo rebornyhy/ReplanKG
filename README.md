@@ -110,7 +110,7 @@ After downloading:
 Replace the folder:
 
 ```
-./midname/
+./mid2name/
 ```
 
 with the downloaded folder:
