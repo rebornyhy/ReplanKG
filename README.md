@@ -169,9 +169,9 @@ Extract the corresponding test data files and place them directly under the proj
 For example:
 
 ```
-./simpleques_testdata_shot.jsonl
-./webqsp_testdata_shot.jsonl
-./cwq_testdata_shot.jsonl
+./simpleques_testdata.jsonl
+./webqsp_testdata.jsonl
+./cwq_testdata.jsonl
 ```
 
 ---
