@@ -6,13 +6,13 @@ set -e
 ############################################
 
 # ===== 通用参数 =====
-LLM_PATH=""                 # 必填
-MID2NAME_PATH=""            # 必填
-EMB_MODEL_PATH=""           # 必填
-DATA_PATH=""                # 必填（*_testdata_shot.jsonl）
+LLM_PATH="./replankg_llm/"                 # 必填
+MID2NAME_PATH="./mid2name/mid2name.pkl"            # 必填
+EMB_MODEL_PATH="./emb_model/bge-large-en-v1.5"           # 必填
+DATA_PATH=""                # 必填
 EXP_NAME=""                 # 必填
-OUTPUT_DIR=""               # 必填
-RETRY=5                     # 必填（建议 >=3）
+OUTPUT_DIR="./output/"               # 必填
+RETRY=3                     # 必填
 
 # ===== 数据集选择 =====
 # 可选: simpleques / webqsp / cwq
@@ -27,24 +27,24 @@ ITER_N=1
 ############################################
 # ========== SimpleQuestions 路径 ==========
 ############################################
-SQ_TEST_JSONL=""
-SQ_TEST_SUBGRAPH_JSONL=""
+SQ_TEST_JSONL="./data_kg/simpleques/simpleques_test.jsonl"
+SQ_TEST_SUBGRAPH_JSONL="./data_kg/simpleques/simpleques_test_subgraph.jsonl"
 
 ############################################
 # ========== WebQSP 路径 ==========
 ############################################
-WQ_TEST_JSONL=""
-WQ_TEST_SIMPLE_JSONL=""
-WQ_TEST_COM_JSONL=""
-WQ_DIR=""
+WQ_TEST_JSONL="./data_kg/webqsp/webqsp_test.jsonl"
+WQ_TEST_SIMPLE_JSONL="./data_kg/webqsp/test_simple.jsonl"
+WQ_TEST_COM_JSONL="./data_kg/webqsp/webqsp_test_com.jsonl"
+WQ_DIR="./data_kg/webqsp/"
 
 ############################################
 # ========== CWQ 路径 ==========
 ############################################
-CWQ_TEST_JSONL=""
-CWQ_TEST_SIMPLE_JSONL=""
-CWQ_TEST_COM_JSONL=""
-CWQ_DIR=""
+CWQ_TEST_JSONL="./data_kg/cwq/cwq_test.jsonl"
+CWQ_TEST_SIMPLE_JSONL="./data_kg/cwq/test_simple.jsonl"
+CWQ_TEST_COM_JSONL="./data_kg/cwq/cwq_test_com.jsonl"
+CWQ_DIR="./data_kg/cwq/"
 
 
 #################################################
