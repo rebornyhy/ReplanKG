@@ -9,7 +9,7 @@ set -e
 LLM_PATH="./replankg_llm/"                 # 必填
 MID2NAME_PATH="./mid2name/mid2name.pkl"            # 必填
 EMB_MODEL_PATH="./emb_model/bge-large-en-v1.5"           # 必填
-DATA_PATH=""                # 必填
+
 EXP_NAME=""                 # 必填
 OUTPUT_DIR="./output/"               # 必填
 RETRY=3                     # 必填
@@ -17,6 +17,8 @@ RETRY=3                     # 必填
 # ===== 数据集选择 =====
 # 可选: simpleques / webqsp / cwq
 KG_CLASS=""
+
+DATA_PATH=""                # 必填
 
 # ===== 可选参数（有默认值）=====
 WIDTH=3
