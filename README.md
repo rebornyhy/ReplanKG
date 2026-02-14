@@ -148,6 +148,34 @@ with the downloaded data_kg folder.
 
 ---
 
+### 4️⃣ Download testdata
+
+Download from Baidu Netdisk:
+
+simpleques：
+Link: https://pan.baidu.com/s/1zXs7V93OTAlnjWD2DbWoWw?pwd=fmak
+
+
+webqsp：
+Link: https://pan.baidu.com/s/1igQRQxY2Ol4358dbp0Ltqg?pwd=319k
+
+cwq：
+Link: https://pan.baidu.com/s/1V1iNlhZ7M8slR3BGz3ul8g?pwd=q8ms
+
+After downloading:
+
+Extract the corresponding test data files and place them directly under the project root directory (`./`).
+
+For example:
+
+```
+./simpleques_testdata_shot.jsonl
+./webqsp_testdata_shot.jsonl
+./cwq_testdata_shot.jsonl
+```
+
+---
+
 ## Running Inference
 
 RePlanKG provides a unified inference script:
