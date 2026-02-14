@@ -139,6 +139,34 @@ https://pan.baidu.com/s/1uRbvdGbp7yD8PDaJgli6lA
 
 ---
 
+### 4️⃣ 下载测试数据
+
+请从百度网盘下载对应测试数据：
+
+simpleques：
+链接: https://pan.baidu.com/s/1zXs7V93OTAlnjWD2DbWoWw?pwd=fmak
+
+
+webqsp：
+链接: https://pan.baidu.com/s/1igQRQxY2Ol4358dbp0Ltqg?pwd=319k
+
+cwq：
+链接: https://pan.baidu.com/s/1V1iNlhZ7M8slR3BGz3ul8g?pwd=q8ms
+
+下载完成后：
+
+解压对应的测试数据文件，并将其直接放置在项目根目录（./）下。
+
+例如:
+
+```
+./simpleques_testdata_shot.jsonl
+./webqsp_testdata_shot.jsonl
+./cwq_testdata_shot.jsonl
+```
+
+---
+
 ## 推理运行
 
 RePlanKG 提供统一推理脚本：
