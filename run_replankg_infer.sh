@@ -18,7 +18,30 @@ RETRY=3                     # 必填
 # 可选: simpleques / webqsp / cwq
 KG_CLASS=""
 
-DATA_PATH=""                # 必填
+############################################
+# ========== 自动匹配 DATA_PATH ==========
+############################################
+
+if [ "$KG_CLASS" == "simpleques" ]; then
+  DATA_PATH="./simpleques_testdata.jsonl"
+
+elif [ "$KG_CLASS" == "webqsp" ]; then
+  DATA_PATH="./webqsp_testdata.jsonl"
+
+elif [ "$KG_CLASS" == "cwq" ]; then
+  DATA_PATH="./cwq_testdata.jsonl"
+
+else
+  echo "ERROR: KG_CLASS 必须为 simpleques / webqsp / cwq"
+  exit 1
+fi
+
+# 检查文件是否存在
+if [ ! -f "$DATA_PATH" ]; then
+  echo "ERROR: DATA_PATH 文件不存在: $DATA_PATH"
+  echo "请确认已下载对应测试数据并放在项目根目录。"
+  exit 1
+fi
 
 # ===== 可选参数（有默认值）=====
 WIDTH=3
