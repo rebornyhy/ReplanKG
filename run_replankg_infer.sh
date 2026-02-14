@@ -2,24 +2,24 @@
 set -e
 
 ############################################
-# ========== 必填参数区域（用户填写） ==========
+# ========== Required Parameters (User Input) ==========
 ############################################
 
-# ===== 通用参数 =====
-LLM_PATH="./replankg_llm/"                 # 必填
-MID2NAME_PATH="./mid2name/mid2name.pkl"            # 必填
-EMB_MODEL_PATH="./emb_model/bge-large-en-v1.5"           # 必填
+# ===== General Parameters =====
+LLM_PATH="./replankg_llm/"                 # Required
+MID2NAME_PATH="./mid2name/mid2name.pkl"    # Required
+EMB_MODEL_PATH="./emb_model/bge-large-en-v1.5"  # Required
 
-EXP_NAME=""                 # 必填
-OUTPUT_DIR="./output/"               # 必填
-RETRY=3                     # 必填
+EXP_NAME=""                 # Required
+OUTPUT_DIR="./output/"      # Required
+RETRY=3                     # Required
 
-# ===== 数据集选择 =====
-# 可选: simpleques / webqsp / cwq
+# ===== Dataset Selection =====
+# Options: simpleques / webqsp / cwq
 KG_CLASS=""
 
 ############################################
-# ========== 自动匹配 DATA_PATH ==========
+# ========== Automatically Match DATA_PATH ==========
 ############################################
 
 if [ "$KG_CLASS" == "simpleques" ]; then
@@ -32,31 +32,31 @@ elif [ "$KG_CLASS" == "cwq" ]; then
   DATA_PATH="./cwq_testdata.jsonl"
 
 else
-  echo "ERROR: KG_CLASS 必须为 simpleques / webqsp / cwq"
+  echo "ERROR: KG_CLASS must be one of simpleques / webqsp / cwq"
   exit 1
 fi
 
-# 检查文件是否存在
+# Check whether the test data file exists
 if [ ! -f "$DATA_PATH" ]; then
-  echo "ERROR: DATA_PATH 文件不存在: $DATA_PATH"
-  echo "请确认已下载对应测试数据并放在项目根目录。"
+  echo "ERROR: DATA_PATH file does not exist: $DATA_PATH"
+  echo "Please ensure the corresponding test data has been downloaded and placed in the project root directory."
   exit 1
 fi
 
-# ===== 可选参数（有默认值）=====
+# ===== Optional Parameters (with default values) =====
 WIDTH=3
 ITER_N=1
-# HOP 不需要填，会由 python 内部自动校验
+# HOP does not need to be specified; it will be validated internally in Python
 
 
 ############################################
-# ========== SimpleQuestions 路径 ==========
+# ========== SimpleQuestions Paths ==========
 ############################################
 SQ_TEST_JSONL="./data_kg/simpleques/simpleques_test.jsonl"
 SQ_TEST_SUBGRAPH_JSONL="./data_kg/simpleques/simpleques_test_subgraph.jsonl"
 
 ############################################
-# ========== WebQSP 路径 ==========
+# ========== WebQSP Paths ==========
 ############################################
 WQ_TEST_JSONL="./data_kg/webqsp/webqsp_test.jsonl"
 WQ_TEST_SIMPLE_JSONL="./data_kg/webqsp/test_simple.jsonl"
@@ -64,7 +64,7 @@ WQ_TEST_COM_JSONL="./data_kg/webqsp/webqsp_test_com.jsonl"
 WQ_DIR="./data_kg/webqsp/"
 
 ############################################
-# ========== CWQ 路径 ==========
+# ========== CWQ Paths ==========
 ############################################
 CWQ_TEST_JSONL="./data_kg/cwq/cwq_test.jsonl"
 CWQ_TEST_SIMPLE_JSONL="./data_kg/cwq/test_simple.jsonl"
@@ -73,12 +73,12 @@ CWQ_DIR="./data_kg/cwq/"
 
 
 #################################################
-# ========== 参数合法性检查 ==========
+# ========== Parameter Validation ==========
 #################################################
 
 function check_required() {
   if [ -z "$1" ]; then
-    echo "ERROR: $2 不能为空"
+    echo "ERROR: $2 cannot be empty"
     exit 1
   fi
 }
@@ -95,7 +95,7 @@ mkdir -p "$OUTPUT_DIR"
 
 
 #################################################
-# ========== 组装基础命令 ==========
+# ========== Build Base Command ==========
 #################################################
 
 BASE_CMD="python kgqa_infer_args.py \
@@ -111,7 +111,7 @@ BASE_CMD="python kgqa_infer_args.py \
 
 
 #################################################
-# ========== 按数据集拼接 ==========
+# ========== Append Dataset-Specific Arguments ==========
 #################################################
 
 if [ "$KG_CLASS" == "simpleques" ]; then
@@ -150,13 +150,13 @@ elif [ "$KG_CLASS" == "cwq" ]; then
     --cwq_dir $CWQ_DIR"
 
 else
-  echo "ERROR: KG_CLASS 必须为 simpleques / webqsp / cwq"
+  echo "ERROR: KG_CLASS must be one of simpleques / webqsp / cwq"
   exit 1
 fi
 
 
 #################################################
-# ========== 执行 ==========
+# ========== Execute ==========
 #################################################
 
 echo "======================================"
